@@ -26,12 +26,18 @@ public class Member {
     }
 
     /**
-     * Mengubah nama member. (Validasi menolak nama kosong akan diterapkan di sini).
+     * Mengubah nama member. 
+     * Nama akan ditolak jika kosong atau hanya berisi spasi.
      *
      * @param nama nama lengkap baru member, tidak boleh kosong atau hanya spasi
      */
     public void setNama(String nama) {
-        this.nama = nama;
+        // Mengecek apakah string kosong atau hanya berisi spasi
+        if (nama == null || nama.trim().isEmpty()) {
+            System.out.println("Penolakan: Nama tidak boleh kosong atau hanya berisi spasi.");
+        } else {
+            this.nama = nama; // Menyimpan nilai jika valid
+        }
     }
 
     /**
@@ -44,12 +50,20 @@ public class Member {
     }
 
     /**
-     * Mengubah nomor telepon member. (Validasi format akan diterapkan di sini).
+     * Mengubah nomor telepon member setelah melalui validasi format.
+     * Jika format tidak valid, nomor lama dipertahankan dan pesan
+     * penolakan dicetak.
      *
-     * @param noTelepon nomor telepon baru, wajib diawali angka 0 dan minimal 10 digit
+     * @param noTelepon nomor telepon baru, wajib diawali angka 0
+     *                  dan memiliki panjang minimal 10 digit
      */
     public void setNoTelepon(String noTelepon) {
-        this.noTelepon = noTelepon;
+        // Mengecek apakah panjangnya kurang dari batas atau tidak diawali "0"
+        if (noTelepon == null || noTelepon.length() < MIN_PANJANG_TELEPON || !noTelepon.startsWith(AWALAN_TELEPON)) {
+            System.out.println("Penolakan: Nomor telepon harus diawali angka " + AWALAN_TELEPON + " dan minimal " + MIN_PANJANG_TELEPON + " digit.");
+        } else {
+            this.noTelepon = noTelepon; // Menyimpan nilai jika valid
+        }
     }
 
     /**
