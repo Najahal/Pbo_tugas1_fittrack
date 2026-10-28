@@ -5,7 +5,8 @@
  */
 public class Member {
 
-    // Konstanta untuk batas validasi dan nilai default (mencegah magic number/string)
+    // Konstanta untuk batas validasi dan nilai default (mencegah magic
+    // number/string)
     public static final int MIN_PANJANG_TELEPON = 10;
     public static final String AWALAN_TELEPON = "0";
     public static final String PAKET_DEFAULT = "Basic";
@@ -21,15 +22,17 @@ public class Member {
 
     /**
      * Constructor lengkap dengan 4 parameter.
-     * Mengisi atribut melalui pemanggilan setter masing-masing untuk menjaga validasi.
+     * Mengisi atribut melalui pemanggilan setter masing-masing untuk menjaga
+     * validasi.
      *
-     * @param nama nama lengkap member
-     * @param noTelepon nomor telepon aktif member
+     * @param nama          nama lengkap member
+     * @param noTelepon     nomor telepon aktif member
      * @param tanggalDaftar tanggal pertama kali mendaftar
-     * @param jenisPaket jenis paket keanggotaan (Basic, Premium, VIP)
+     * @param jenisPaket    jenis paket keanggotaan (Basic, Premium, VIP)
      */
     public Member(String nama, String noTelepon, String tanggalDaftar, String jenisPaket) {
-        // Set nilai awal default yang aman untuk menghindari atribut bernilai null jika ditolak setter
+        // Set nilai awal default yang aman untuk menghindari atribut bernilai null jika
+        // ditolak setter
         this.nama = NAMA_DEFAULT;
         this.noTelepon = TELEPON_DEFAULT;
         this.tanggalDaftar = TANGGAL_DEFAULT;
@@ -44,10 +47,11 @@ public class Member {
 
     /**
      * Constructor tanpa paket dengan 3 parameter.
-     * Memanggil constructor lengkap via this(...) dengan paket otomatis bernilai "Basic".
+     * Memanggil constructor lengkap via this(...) dengan paket otomatis bernilai
+     * "Basic".
      *
-     * @param nama nama lengkap member
-     * @param noTelepon nomor telepon aktif member
+     * @param nama          nama lengkap member
+     * @param noTelepon     nomor telepon aktif member
      * @param tanggalDaftar tanggal pertama kali mendaftar
      */
     public Member(String nama, String noTelepon, String tanggalDaftar) {
@@ -88,13 +92,16 @@ public class Member {
 
     /**
      * Mengubah nomor telepon member setelah melalui validasi format.
-     * Jika format tidak valid, nomor lama dipertahankan dan pesan penolakan dicetak.
+     * Jika format tidak valid, nomor lama dipertahankan dan pesan penolakan
+     * dicetak.
      *
-     * @param noTelepon nomor telepon baru, wajib diawali angka 0 dan minimal 10 digit
+     * @param noTelepon nomor telepon baru, wajib diawali angka 0 dan minimal 10
+     *                  digit
      */
     public void setNoTelepon(String noTelepon) {
         if (noTelepon == null || noTelepon.length() < MIN_PANJANG_TELEPON || !noTelepon.startsWith(AWALAN_TELEPON)) {
-            System.out.println("Penolakan: Nomor telepon harus diawali angka " + AWALAN_TELEPON + " dan minimal " + MIN_PANJANG_TELEPON + " digit.");
+            System.out.println("Penolakan: Nomor telepon harus diawali angka " + AWALAN_TELEPON + " dan minimal "
+                    + MIN_PANJANG_TELEPON + " digit.");
         } else {
             this.noTelepon = noTelepon;
         }
@@ -138,11 +145,14 @@ public class Member {
      * @param jenisPaket jenis paket baru
      */
     public void setJenisPaket(String jenisPaket) {
-        if (jenisPaket != null && (jenisPaket.equals("Basic") || jenisPaket.equals("Premium") || jenisPaket.equals("VIP"))) {
+        if (jenisPaket != null
+                && (jenisPaket.equals("Basic") || jenisPaket.equals("Premium") || jenisPaket.equals("VIP"))) {
             this.jenisPaket = jenisPaket;
         } else {
-            System.out.println("Penolakan: Jenis paket '" + jenisPaket + "' tidak valid. Pilih antara Basic, Premium, atau VIP.");
-            // Jika nilai lama belum diset (saat constructor), otomatis tetap bernilai PAKET_DEFAULT
+            System.out.println(
+                    "Penolakan: Jenis paket '" + jenisPaket + "' tidak valid. Pilih antara Basic, Premium, atau VIP.");
+            // Jika nilai lama belum diset (saat constructor), otomatis tetap bernilai
+            // PAKET_DEFAULT
         }
     }
 
