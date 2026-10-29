@@ -29,3 +29,22 @@ tugas1-fittrack/
 │   └── TesFitTrack.java
 ├── .gitignore
 └── README.md
+
+## Prasyarat
+* JDK 17 atau lebih baru
+* Terminal / PowerShell
+
+## Cara Menjalankan Program
+1. Buka terminal (PowerShell/Command Prompt) pada folder utama project.
+2. Kompilasi kode dengan perintah: `javac src/*.java`
+3. Jalankan program dengan perintah: `java -cp src TesFitTrack`
+
+## Nilai Default
+Jika terdapat nilai yang tidak valid saat `constructor` dipanggil, objek tetap dibentuk dengan nilai default yang aman agar program tidak berhenti paksa:
+* Nama: "Member Tanpa Nama"
+* Nomor Telepon: "0000000000"
+* Tanggal Daftar: "01-01-2026"
+* Paket: "Basic"
+
+## Contoh Output Program
+![Hasil Eksekusi Program](output.png)
