@@ -29,6 +29,7 @@ tugas1-fittrack/
 │   └── TesFitTrack.java
 ├── .gitignore
 └── README.md
+```
 
 ## Prasyarat
 * JDK 17 atau lebih baru
