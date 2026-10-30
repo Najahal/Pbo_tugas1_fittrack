@@ -1,7 +1,7 @@
 # Tugas 1: Sistem Keanggotaan Gym FitTrack
 
-* **Nama Lengkap:** [Nama Lengkap Anda]
-* **NPM:** [NPM Anda]
+* **Nama Lengkap:** Najahal Khaira
+* **NPM:** 250810701100040
 * **Kelas:** Praktikum PBO A
 
 ## Deskripsi Singkat
